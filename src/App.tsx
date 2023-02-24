@@ -2,37 +2,35 @@ import React , { useEffect , useState } from 'react';
 import './App.css';
 import axios from "axios";
 
-import { interfaceCharacter } from './components/character';
+import ComponentCharacter from './components/character';
 import { async } from 'q';
 
 function App() {
 
-  const [characterApp, setcharacterApp] = useState <Array<interfaceCharacter> | React.ReactNode> ();
+  const [characterApp, setcharacterApp] = useState < any > ( [] );
 
-  const fetchACharacter = async (id:number) => {
+  const fetchACharacter = async ( id : number ) => {
 
     try {
 
-      const apiResponse = await axios.get(`https://swapi.dev/api/people/${id}`);
+      const apiResponse = await axios.get( `https://swapi.dev/api/people/${id}` );
       setcharacterApp(apiResponse.data);
-      console.log(characterApp);
 
     } catch (error) {
 
-      console.log(" this error is catched : ->->-> "  + error +  " <-<-<- : this error is catched ")
-    }
+      console.log(" this error occured : ->->-> "  + error +  " <-<-<- : this error occured ");
 
-  }
+    };
 
-  useEffect( () => {fetchACharacter(1) },[]);
+  };
 
-  console.log(characterApp);
+  useEffect( () => { fetchACharacter(1) } , [] ) ;
 
   return (
 
     <>
 
-      The Selected Character is : {characterApp }
+      <ComponentCharacter dataCharacter={characterApp}  />
 
     </>
         
