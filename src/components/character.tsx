@@ -31,7 +31,7 @@ const ComponentCharacter : React.FC < propsCharacter> = ( { dataCharacter } )  =
 
     return (
 
-        <div>
+        <div className="App-header">
 
             <h3> {dataCharacter.name} </h3>
             <p> Birth Year : {dataCharacter.birth_year} </p>

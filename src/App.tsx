@@ -26,9 +26,9 @@ function App() {
 
       } else if (apiResponse.status === 418 ) { 
 
-        seterrormessageApp("418 I'm a tea pot 🫖 , silly")
+        seterrormessageApp("418 I'm a tea pot 🫖 , silly");
 
-      }
+      };
       
 
     } catch (error) {
